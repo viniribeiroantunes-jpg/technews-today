@@ -1,0 +1,197 @@
+/* === DESAFIO TECHNEWS - PORTAL MODERNO === */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0a0e27;
+    color: #e4e4e7;
+    line-height: 1.6;
+}
+
+/* Header com glassmorphism */
+.cabecalho {
+    background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(219,39,119,0.1));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 30px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 36px;
+    background: linear-gradient(90deg, #6366f1, #db2777);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.tagline {
+    color: #94a3b8;
+    margin-top: 10px;
+}
+
+/* Grid: destaque na largura toda; vídeo e newsletter lado a lado */
+.conteudo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.artigo-destaque {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #1e293b, #334155);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s;
+}
+
+.artigo-destaque:hover {
+    transform: translateY(-5px);
+}
+
+.artigo-destaque h2 {
+    color: #60a5fa;
+    margin-bottom: 10px;
+}
+
+.data {
+    display: block;
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.leia-mais {
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.leia-mais summary {
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+.leia-mais p {
+    margin-top: 10px;
+}
+
+/* Vídeo */
+.secao-video {
+    text-align: center;
+    background: #151c34;
+    border-radius: 20px;
+    padding: 30px 20px;
+    min-width: 0;
+}
+
+.secao-video h3, .secao-newsletter h3 {
+    margin-bottom: 15px;
+}
+
+.video-embed {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 3 / 2;
+    height: auto;
+    border-radius: 15px;
+    border: 2px solid #6366f1;
+    margin-top: 15px;
+}
+
+/* Newsletter */
+.secao-newsletter {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    padding: 30px;
+    border-radius: 20px;
+    min-width: 0;
+}
+
+.form-newsletter label {
+    display: block;
+    margin-top: 10px;
+}
+
+.form-newsletter input:not([type="checkbox"]),
+.form-newsletter select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    color: white;
+}
+
+.form-newsletter select option {
+    color: #111827;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.checkbox-container label {
+    margin: 0;
+}
+
+.btn-inscrever {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #f59e0b, #ef4444);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-inscrever:hover {
+    transform: scale(1.05);
+}
+
+/* Rodapé */
+.rodape {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #64748b;
+}
+
+.rodape a {
+    color: #60a5fa;
+}
+
+/* Responsividade para celular */
+@media (max-width: 768px) {
+    .conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .artigo-destaque {
+        grid-column: auto;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+}
